@@ -49,6 +49,7 @@ import coil.load
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayout
+import com.google.android.flexbox.JustifyContent
 import com.google.android.material.chip.Chip
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
@@ -184,6 +185,7 @@ class ArchiveDetailsFragment : Fragment(), TabRemovedListener, TabsClearedListen
             val namespaceLayout = FlexboxLayout(context).apply {
                 flexWrap = FlexWrap.WRAP
                 flexDirection = FlexDirection.ROW
+                justifyContent = JustifyContent.FLEX_END
             }
 
             tagLayout.addView(namespaceLayout, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -199,6 +201,7 @@ class ArchiveDetailsFragment : Fragment(), TabRemovedListener, TabsClearedListen
             val namespaceLayout = FlexboxLayout(context).apply {
                 flexWrap = FlexWrap.WRAP
                 flexDirection = FlexDirection.ROW
+                justifyContent = JustifyContent.FLEX_END
             }
             tagLayout.addView(namespaceLayout, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             val namespaceView = createTagView(namespace, true)

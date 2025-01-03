@@ -36,6 +36,7 @@ import androidx.preference.PreferenceManager
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayout
+import com.google.android.flexbox.JustifyContent
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.utazukin.ichaival.database.DatabaseReader
 import kotlinx.coroutines.launch
@@ -93,6 +94,7 @@ class TagDialogFragment : DialogFragment() {
             val namespaceLayout = FlexboxLayout(context)
             namespaceLayout.flexWrap = FlexWrap.WRAP
             namespaceLayout.flexDirection = FlexDirection.ROW
+            namespaceLayout.justifyContent = JustifyContent.FLEX_END
             tagLayout.addView(
                 namespaceLayout,
                 ViewGroup.LayoutParams.MATCH_PARENT,
