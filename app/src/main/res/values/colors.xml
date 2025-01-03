@@ -30,4 +30,11 @@
     <color name="category_remove_color">#A2A2A2</color>
     <color name="category_add_color">#FFFFFF</color>
     <color name="category_add_back_color">#FF000000</color>
+
+    <color name="page_count_background">#D6000000</color>
+    <color name="color_page_0">#999999</color>
+    <color name="color_page_10">#FFFFFF</color>
+    <color name="color_page_100">#8F8FFF</color>
+    <color name="color_page_500">#FF6D6D</color>
+
 </resources>
