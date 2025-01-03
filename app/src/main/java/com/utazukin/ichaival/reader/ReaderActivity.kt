@@ -237,6 +237,11 @@ class ReaderActivity : BaseActivity(), OnFragmentInteractionListener, TabRemoved
             override fun onProgressChanged(bar: SeekBar?, progress: Int, fromUser: Boolean) {
                 seekPage = currentAdapter?.getPositionFromPage(progress) ?: 0
                 currentAdapter?.run { progressStartText.text = (getPageFromPosition(seekPage) + 1).toString() }
+                if (seekPage > -1)
+                    jumpToPage(seekPage)
+                seekPage = -1
+                delayedHide(autoHideDelay)
+
             }
             override fun onStartTrackingTouch(p0: SeekBar?) { switchLayoutJob?.cancel() }
             override fun onStopTrackingTouch(p0: SeekBar?) {
