@@ -132,6 +132,8 @@ class TagDialogFragment : DialogFragment() {
                 else
                     ContextCompat.getDrawable(requireContext(), R.drawable.tag_background)
             setTextColor(Color.WHITE)
+            if (tag in listOf("artist", "group") && isNamespace)
+                setTextColor(Color.RED)
             val params = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
