@@ -32,6 +32,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.ActionMode
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.PagingDataAdapter
@@ -124,6 +125,13 @@ class ArchiveRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         getItem(position)?.let {
+            holder.archivePageCount.text = it.pageCount.toString()
+            when {
+                it.pageCount > 500 -> holder.archivePageCount.setTextColor(ContextCompat.getColor(context, R.color.color_page_500))
+                it.pageCount > 100 -> holder.archivePageCount.setTextColor(ContextCompat.getColor(context, R.color.color_page_100))
+                it.pageCount > 10 -> holder.archivePageCount.setTextColor(ContextCompat.getColor(context, R.color.color_page_10))
+                else -> holder.archivePageCount.setTextColor(ContextCompat.getColor(context, R.color.color_page_0))
+            }
             holder.archiveName.text = it.title
             thumbLoadingJobs[holder] = scope.launch {
                 val imageFile = DatabaseReader.getArchiveImage(it, holder.mView.context)
@@ -175,6 +183,7 @@ class ArchiveRecyclerViewAdapter(
 
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         val mContentView: CardView? = mView.findViewById(R.id.archive_card)
+        val archivePageCount: TextView = mView.findViewById(R.id.archive_page_count)
         val archiveName: TextView = mView.findViewById(R.id.archive_label)
         val archiveImage: ImageView = mView.findViewById(R.id.archive_thumb)
 

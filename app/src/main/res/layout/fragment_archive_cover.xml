@@ -43,6 +43,21 @@
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
         <TextView
+            android:id="@+id/archive_page_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@drawable/rounded_background"
+            android:maxLines="1"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="1dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/archive_label"
+            tools:ignore="MissingConstraints"
+            tools:text="100" />
+
+        <TextView
             android:id="@+id/archive_label"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
