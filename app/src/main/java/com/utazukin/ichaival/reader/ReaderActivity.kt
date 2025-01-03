@@ -70,6 +70,7 @@ import com.utazukin.ichaival.ResponseProgressListener
 import com.utazukin.ichaival.TabRemovedListener
 import com.utazukin.ichaival.TabsClearedListener
 import com.utazukin.ichaival.ThumbRecyclerViewAdapter
+import com.utazukin.ichaival.VerticalSeekBar
 import com.utazukin.ichaival.WebHandler
 import com.utazukin.ichaival.castStringPrefToFloat
 import com.utazukin.ichaival.clearDiskCache
@@ -125,7 +126,7 @@ class ReaderActivity : BaseActivity(), OnFragmentInteractionListener, TabRemoved
     private lateinit var imagePager: ViewPager2
     private lateinit var webtoonRecycler: WebtoonRecyclerView
     private lateinit var webtoonLayout: FrameLayout
-    private lateinit var pageSeekBar: SeekBar
+    private lateinit var pageSeekBar: VerticalSeekBar
     private lateinit var pageSeekLayout: LinearLayout
     private lateinit var progressEndText: TextView
     private lateinit var progressStartText: TextView
@@ -221,7 +222,7 @@ class ReaderActivity : BaseActivity(), OnFragmentInteractionListener, TabRemoved
         mVisible = true
 
         pageSeekBar = findViewById(R.id.page_seek_bar)
-        pageSeekLayout.setBackgroundColor(MaterialColors.getColor(pageSeekLayout, R.attr.cardBackgroundColor))
+        // pageSeekLayout.setBackgroundColor(MaterialColors.getColor(pageSeekLayout, R.attr.cardBackgroundColor))
         progressStartText = findViewById(R.id.txt_progress_start)
         imagePager = findViewById(R.id.image_pager)
 

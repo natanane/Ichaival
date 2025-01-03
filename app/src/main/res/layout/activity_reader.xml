@@ -59,34 +59,43 @@
 
         <LinearLayout
             android:id="@+id/page_seek_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@color/dark_gray"
-            android:orientation="horizontal"
-            android:padding="5dp">
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|end"
+            android:orientation="vertical"
+            android:layout_margin="10dp" >
 
             <TextView
-                android:id="@+id/txt_progress_start"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".1"
-                tools:text="1" />
-
-            <SeekBar
-                android:id="@+id/page_seek_bar"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_marginEnd="10dp"
-                android:layout_weight=".8" />
+                android:layout_height="0dp"
+                android:layout_weight=".4" />
 
             <TextView
                 android:id="@+id/txt_progress_end"
-                android:layout_width="30dp"
+                android:layout_width="match_parent"
+                android:background="@color/dark_gray"
+                android:gravity="center"
+                android:textColor="#C5C7C9"
                 android:layout_height="wrap_content"
-                android:layout_weight=".1"
-                android:gravity="end"
-                tools:text="500" />
+                tools:text="200" />
+
+            <com.utazukin.ichaival.VerticalSeekBar
+                android:id="@+id/page_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/dark_gray"
+                android:padding="10dp"
+                android:layout_weight=".6" />
+
+            <TextView
+                android:id="@+id/txt_progress_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/dark_gray"
+                android:textColor="#C5C7C9"
+                android:gravity="center"
+                tools:text="1" />
+
         </LinearLayout>
 
     </FrameLayout>
