@@ -232,6 +232,8 @@ class ArchiveDetailsFragment : Fragment(), TabRemovedListener, TabsClearedListen
             else
                 ContextCompat.getDrawable(requireContext(), R.drawable.namespace_background)
             setTextColor(Color.WHITE)
+            if (tag in listOf("artist", "group") && isNamespace)
+                setTextColor(Color.RED)
             val params = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
             params.setMargins(10, 10, 10, 10)
             layoutParams = params
