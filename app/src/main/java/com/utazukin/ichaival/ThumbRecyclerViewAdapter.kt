@@ -63,7 +63,7 @@ class ThumbRecyclerViewAdapter(
         listener?.onThumbLongPress(item) ?: false
     }
 
-    var maxThumbnails = 10
+    var maxThumbnails = 100
     val hasMorePreviews: Boolean
         get() = maxThumbnails < archive.numPages
     private val imageLoadRequests: MutableMap<ViewHolder, Disposable> = mutableMapOf()
