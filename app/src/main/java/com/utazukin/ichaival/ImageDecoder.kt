@@ -49,7 +49,7 @@ enum class ImageFormat(private val value: Int) {
 
 class ImageDecoder : IImageDecoder {
     override fun decode(context: Context?, uri: Uri): Bitmap {
-        return context?.contentResolver?.openInputStream(uri)?.use { BitmapDecoder.decode(it) }!!
+        return context?.contentResolver?.openInputStream(uri)?.use { BitmapDecoder.decode(it, BitmapDecoder.CONFIG_RGBA_8888) }!!
     }
 }
 
@@ -62,7 +62,7 @@ class ImageRegionDecoder : IImageRegionDecoder {
     }
 
     override fun decodeRegion(sRect: Rect, sampleSize: Int): Bitmap {
-        return decoder?.decodeRegion(sRect, BitmapDecoder.CONFIG_AUTO, sampleSize)!!
+        return decoder?.decodeRegion(sRect, BitmapDecoder.CONFIG_RGBA_8888, sampleSize)!!
     }
 
     override fun isReady() = decoder?.isRecycled == false
